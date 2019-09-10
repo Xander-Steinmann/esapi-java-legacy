@@ -27,7 +27,7 @@ import org.owasp.esapi.User;
 
 /**
  * Reference implementation of the Logger interface. This implementation extends org.apache.log4j.Logger
- * in order to take advantage of per-class and per-package configuration options provided by Log4J. 
+ * in order to take advantage of per-class and per-package configuration options provided by Log4J.
  *
  * @author August Detlefsen (augustd at codemagi dot com)
  *         <a href="http://www.codemagi.com">CodeMagi, Inc.</a>
@@ -45,7 +45,7 @@ public class Log4JLogger extends org.apache.log4j.Logger implements org.owasp.es
 
 	/** Log the application name? */
 	private static boolean logAppName = ESAPI.securityConfiguration().getLogApplicationName();
-	
+
 	/** Log the server ip? */
 	private static boolean logServerIP = ESAPI.securityConfiguration().getLogServerIP();
 
@@ -98,7 +98,7 @@ public class Log4JLogger extends org.apache.log4j.Logger implements org.owasp.es
 			this.error(org.owasp.esapi.Logger.SECURITY_FAILURE, "", e);
 		}
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 * Explanation: Since this class extends Log4j's Logger class which has a

@@ -43,5 +43,5 @@ public class Log4JLoggerFactory implements LoggerFactory {
 	public org.apache.log4j.Logger makeNewLoggerInstance(String name) {
 		return new Log4JLogger(name);
 	}
-	
+
 }

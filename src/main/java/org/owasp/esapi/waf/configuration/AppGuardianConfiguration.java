@@ -51,7 +51,7 @@ public class AppGuardianConfiguration {
 	 * can access them, because they don't have access to the instance of
 	 * the configuration object.
 	 */
-	public static Level LOG_LEVEL = Level.INFO;	
+	public static Level LOG_LEVEL = Level.INFO;
 	public static String LOG_DIRECTORY = "/WEB-INF/logs";
 
 	/*

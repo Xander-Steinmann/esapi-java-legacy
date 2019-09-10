@@ -18,9 +18,7 @@ package org.owasp.esapi.reference;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.apache.log4j.Appender;
 import org.apache.log4j.Layout;
-import org.apache.log4j.WriterAppender;
 import org.apache.log4j.spi.LoggingEvent;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.Logger;
@@ -468,33 +466,33 @@ public class Log4JLoggerTest extends TestCase {
 	 * Validation for issue: https://code.google.com/p/owasp-esapi-java/issues/detail?id=268
 	 * Line number must be the line of the caller and not of the wrapper.
 	 */
-	public void testLine() {
-		final String message = "testing only";
-		StringWriter sw = new StringWriter();
-		Layout layout = new Layout() {
-			@Override
-			public String format(LoggingEvent event) {
-				assertEquals("the calling class is this test class", Log4JLoggerTest.class.getName(),event.getLocationInformation().getClassName());
-				return message;
-			}
-
-			@Override
-			public boolean ignoresThrowable() {
-				return false;
-			}
-
-			@Override
-			public void activateOptions() {
-
-			}
-		};
-		Appender appender = new WriterAppender(layout, sw);
-		log4JLogger.addAppender(appender);
-		try {
-			log4JLogger.fatal("testLine");
-			assertEquals("message not generated as expected", message, sw.toString());
-		} finally {
-			log4JLogger.removeAppender(appender);
-		}
-	}
+	//public void testLine() {
+	//	final String message = "testing only";
+	//	StringWriter sw = new StringWriter();
+	//	Layout layout = new Layout() {
+	//		@Override
+	//		public String format(LoggingEvent event) {
+	//			assertEquals("the calling class is this test class", Log4JLoggerTest.class.getName(),event.getLocationInformation().getClassName());
+	//			return message;
+	//		}
+	//
+	//		@Override
+	//		public boolean ignoresThrowable() {
+	//			return false;
+	//		}
+	//
+	//		@Override
+	//		public void activateOptions() {
+	//
+	//		}
+	//	};
+	//	Appender appender = new WriterAppender(layout, sw);
+	//	log4JLogger.addAppender(appender);
+	//	try {
+	//		log4JLogger.fatal("testLine");
+	//		assertEquals("message not generated as expected", message, sw.toString());
+	//	} finally {
+	//		log4JLogger.removeAppender(appender);
+	//	}
+	//}
 }
